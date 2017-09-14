@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  <!--start of sign-up form to later be combined into one sign up/in modal -->
   <div class="container-fluid">
     <form id="sign-up">
       <fieldset>
@@ -27,6 +28,7 @@
       </fieldset>
     </form>
 
+  <!--start of sign-in form to later be combined into one sign up/in modal -->
     <form id="sign-in">
       <fieldset>
         <legend></legend>
@@ -36,6 +38,7 @@
       </fieldset>
     </form>
 
+  <!--start of sign-out form -->
     <form id="sign-out">
       <fieldset>
         <legend></legend>
@@ -43,6 +46,7 @@
       </fieldset>
     </form>
 
+  <!--start of change-password form -->
     <form id="change-password">
       <fieldset>
         <legend></legend>
@@ -52,14 +56,47 @@
       </fieldset>
     </form>
   </div>
-  <!-- css grid layout-->
+
+
+  <!-- css grid layout one possibility for laying out the wireframes-->
+  <!-- hasn't been fully layed out yet. this was start-->
   <div class="grid">
-    <div class="title">Title</div>
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
-    <div class="content">Content</div>
-    <div class="footer">footer</div>
+    <div class="title">1. Header</div>
+    <div class="header">2</div>
+    <div class="sidebar">3</div>
+    <div class="content">4</div>
+    <div class="footer">5</div>
   </div>
+
+  <!-- chris's code for uploading files -->
+  <form id="application-x-www-form-data">
+        <fieldset>
+          <legend>enctype unset</legend>
+          <label>
+            Title
+            <input type="text" name="image[title]">
+          </label>
+          <label>
+            Image
+            <input type="file" name="image[file]">
+          </label>
+          <input type="submit" name="submit" value="Upload">
+        </fieldset>
+      </form>
+      <form id="multipart-form-data" enctype="multipart/form-data">
+        <fieldset>
+          <legend>enctype="multipart/form-data"</legend>
+          <label>
+            Title
+            <input type="text" name="image[title]">
+          </label>
+          <label>
+            Image
+            <input type="file" name="image[file]">
+          </label>
+          <input type="submit" name="submit" value="Upload">
+        </fieldset>
+      </form>
 </body>
 
 </html>
