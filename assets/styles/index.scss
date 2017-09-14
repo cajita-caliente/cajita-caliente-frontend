@@ -9,13 +9,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .grid {
   display: grid;
   grid-template-columns: 1fr 500px, 500px
-  1fr;
+  1fr, 1fr 500px;
   grid-template-rows: 1fr, 1fr, 1fr, 1fr;
   grid-template-areas:
   '. title title .'
   ' .header header .'
   '. sidebar content .'
   '. footer footer .';
+  grid-gap: 10px;
 
 }
 
