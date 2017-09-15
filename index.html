@@ -96,17 +96,21 @@
     </form> -->
 
     <br>
-    <form id="multipart-form-data" enctype="multipart/form-data" class="upload">
+    <form id="upload-form" enctype="multipart/form-data" class="upload">
       <fieldset>
         <legend>Choose a file</legend>
         <label>
             Title
             <input type="text" name="file[title]">
-          </label>
+        </label>
         <label>
             File
             <input type="file" name="file[file]">
           </label>
+          <label>
+              Tags
+              <input type="text" name="file[tags]">
+            </label>
         <input type="submit" name="submit" value="Upload" id="upload">
       </fieldset>
     </form>
