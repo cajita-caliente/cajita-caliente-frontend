@@ -1,6 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+body {
+  margin: 0 auto;
+  width: 50%,
+}
 * {
   margin: 0;
   padding: 0;
@@ -49,4 +53,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .grid div:nth-child(odd) {
   background-color: green;
+}
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+hr {
+  border-color: black;
+}
+
+ul {
+  list-style-type: none;
 }
