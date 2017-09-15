@@ -40,9 +40,18 @@ const onChangePassword = function (event) {
     .fail(ui.changePasswordFailure)
 }
 
+const onUpload = function (event) {
+  event.preventDefault()
+  const data = new FormData(event.target)
+  api.upload(data)
+    .done(ui.uploadSucess)
+    .fail(ui.uploadFalure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onUpload
 }

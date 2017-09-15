@@ -41,6 +41,14 @@ const changePasswordFailure = (error) => {
   console.log(error)
 }
 
+// Upload a file
+const uploadSucess = () => {
+  console.log('Uploaded Sucessfully')
+}
+const uploadFalure = () => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,

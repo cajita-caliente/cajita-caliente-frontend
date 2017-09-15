@@ -41,9 +41,25 @@ const changePassword = function (data) {
   })
 }
 
+const upload = function (data) {
+  console.log(app.user.id)
+  data.append('user', app.user.id)
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/files',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data,
+    contentType: false,
+    processData: false
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  upload
 }
