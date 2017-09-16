@@ -70,7 +70,7 @@ const onEdit = function (event) {
 // Delete
 const onDelete = function (event) {
   event.preventDefault()
-  api.deleteFile(event.target.file.id)
+  api.deleteFile(event.target.dataset.id)
     .done(ui.deleteSuccess)
     .fail(ui.deleteFailure)
 }

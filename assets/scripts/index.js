@@ -26,8 +26,11 @@ const addHandlers = () => {
   $('#change-password').on('submit', events.onChangePassword)
   $('#upload-form').on('submit', events.onUpload)
   $('#get-files').on('click', events.onGetFiles)
-  $('.edit-file').on('submit', events.onEdit)
-  $('.delete-file').on('click', events.onDelete)
+  // $('.edit-file').on('submit', events.onEdit)
+  // $('.delete-file').on('click', events.onDelete)
+  $(document).on('click', '.delete-file', events.onDelete)
+
+  $(document).on('submit', '.edit-file', events.onEdit)
 }
 
 module.exports = {
