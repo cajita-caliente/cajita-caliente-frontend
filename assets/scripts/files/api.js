@@ -66,6 +66,19 @@ const getFiles = function () {
     }
   })
 }
+const edit = function (data) {
+  console.log(data)
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/files/' + data.file.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'tags': data.tags
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -73,5 +86,6 @@ module.exports = {
   signOut,
   changePassword,
   upload,
-  getFiles
+  getFiles,
+  edit
 }
