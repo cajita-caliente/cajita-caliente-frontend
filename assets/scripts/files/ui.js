@@ -58,6 +58,23 @@ const getFilesSuccess = function (data) {
 const getFilesFailure = (error) => {
   console.error(error)
 }
+
+const editSuccess = function (data) {
+  console.table(data)
+}
+
+const editFailure = (error) => {
+  console.error(error)
+}
+
+const deleteSuccess = function (data) {
+  console.table(data)
+}
+
+const deleteFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -70,5 +87,9 @@ module.exports = {
   uploadSuccess,
   uploadFailure,
   getFilesSuccess,
-  getFilesFailure
+  getFilesFailure,
+  editSuccess,
+  editFailure,
+  deleteSuccess,
+  deleteFailure
 }

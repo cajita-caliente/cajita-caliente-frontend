@@ -40,6 +40,7 @@ const onChangePassword = function (event) {
     .fail(ui.changePasswordFailure)
 }
 
+// Upload and create
 const onUpload = function (event) {
   event.preventDefault()
   const data = new FormData(event.target)
@@ -48,6 +49,7 @@ const onUpload = function (event) {
     .fail(ui.uploadFailure)
 }
 
+// Read
 const onGetFiles = function (event) {
   event.preventDefault()
 
@@ -55,11 +57,30 @@ const onGetFiles = function (event) {
     .done(ui.getFilesSuccess)
     .fail(ui.getFilesFailure)
 }
+
+// Edit (Update)
+const onEdit = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.edit(data)
+    .done(ui.editSuccess)
+    .fail(ui.editFailure)
+}
+
+// Delete
+const onDelete = function (event) {
+  api.deleteFile(event.target.file.id)
+    .done(ui.deleteSuccess)
+    .fail(ui.deleteFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
   onUpload,
-  onGetFiles
+  onGetFiles,
+  onEdit,
+  onDelete
 }
