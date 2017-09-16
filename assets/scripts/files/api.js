@@ -56,10 +56,22 @@ const upload = function (data) {
   })
 }
 
+const getFiles = function () {
+  console.log(app.user.id)
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/files/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: app.user.id
+  })
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  upload
+  upload,
+  getFiles
 }
