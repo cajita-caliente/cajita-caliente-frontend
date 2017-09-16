@@ -65,8 +65,8 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  getFilesSuccess,
   uploadSuccess,
   uploadFailure,
+  getFilesSuccess,
   getFilesFailure
 }

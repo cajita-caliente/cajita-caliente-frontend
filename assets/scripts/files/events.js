@@ -44,7 +44,7 @@ const onUpload = function (event) {
   event.preventDefault()
   const data = new FormData(event.target)
   api.upload(data)
-    .done(ui.uploadSucess)
+    .done(ui.uploadSuccess)
     .fail(ui.uploadFailure)
 }
 
@@ -52,7 +52,7 @@ const onGetFiles = function (event) {
   event.preventDefault()
 
   api.getFiles()
-    .done(ui.getFilesSucces)
+    .done(ui.getFilesSuccess)
     .fail(ui.getFilesFailure)
 }
 module.exports = {
