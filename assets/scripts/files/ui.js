@@ -42,13 +42,20 @@ const changePasswordFailure = (error) => {
 }
 
 // Upload a file
-const uploadSucess = () => {
+const uploadSuccess = () => {
   console.log('Uploaded Sucessfully')
 }
-const uploadFalure = () => {
+const uploadFailure = (error) => {
   console.error(error)
 }
+// get files
 
+const getFilesSuccess = function (data) {
+  console.table(data)
+}
+const getFilesFailure = (error) => {
+  console.error(error)
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -57,5 +64,9 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  getFilesSuccess,
+  uploadSuccess,
+  uploadFailure,
+  getFilesFailure
 }

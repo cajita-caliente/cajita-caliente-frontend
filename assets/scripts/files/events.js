@@ -45,13 +45,21 @@ const onUpload = function (event) {
   const data = new FormData(event.target)
   api.upload(data)
     .done(ui.uploadSucess)
-    .fail(ui.uploadFalure)
+    .fail(ui.uploadFailure)
 }
 
+const onGetFiles = function (event) {
+  event.preventDefault()
+
+  api.getFiles()
+    .done(ui.getFilesSucces)
+    .fail(ui.getFilesFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
-  onUpload
+  onUpload,
+  onGetFiles
 }

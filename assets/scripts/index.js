@@ -25,6 +25,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', events.onSignOut)
   $('#change-password').on('submit', events.onChangePassword)
   $('#upload-form').on('submit', events.onUpload)
+  $('#get-files').on('click', events.onGetFiles)
 }
 
 module.exports = {
