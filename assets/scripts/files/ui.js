@@ -1,6 +1,7 @@
 'use strict'
 // OJO Verify that the relative path are ok.
 const app = require('../app.js')
+const logic = require('./logic')
 
 // Sign Up
 const signUpSuccess = (data) => {
@@ -48,10 +49,11 @@ const uploadSuccess = () => {
 const uploadFailure = (error) => {
   console.error(error)
 }
-// get files
 
+// get files
 const getFilesSuccess = function (data) {
   console.table(data)
+  logic.loopFiles(data)
 }
 const getFilesFailure = (error) => {
   console.error(error)
