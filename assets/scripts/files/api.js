@@ -60,13 +60,13 @@ const getFiles = function () {
   console.log(app.user.id)
   return $.ajax({
     method: 'GET',
-    url: app.host + '/files/' + app.user.id,
+    url: app.host + '/files',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    data: app.user.id
+    }
   })
 }
+
 module.exports = {
   signUp,
   signIn,
