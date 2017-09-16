@@ -27,6 +27,7 @@ const addHandlers = () => {
   $('#upload-form').on('submit', events.onUpload)
   $('#get-files').on('click', events.onGetFiles)
   $('#edit').on('submit', events.onEdit)
+  $('#delete').on('submit', events.onDelete)
 }
 
 module.exports = {

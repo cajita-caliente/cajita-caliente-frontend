@@ -61,10 +61,17 @@ const onGetFiles = function (event) {
 // Edit (Update)
 const onEdit = function (event) {
   event.preventDefault()
-  const data = new FormData(event.target)
+  const data = getFormFields(event.target)
   api.edit(data)
-  .done(ui.editSuccess)
-  .fail(ui.editFailure)
+    .done(ui.editSuccess)
+    .fail(ui.editFailure)
+}
+
+// Delete
+const onDelete = function (event) {
+  api.deleteFile(event.target.file.id)
+    .done(ui.deleteSuccess)
+    .fail(ui.deleteFailure)
 }
 
 module.exports = {
@@ -74,5 +81,6 @@ module.exports = {
   onChangePassword,
   onUpload,
   onGetFiles,
-  onEdit
+  onEdit,
+  onDelete
 }

@@ -80,6 +80,16 @@ const edit = function (data) {
   })
 }
 
+const deleteFile = function (id) {
+  return $.ajax({
+    url: app.host + '/files/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -87,5 +97,6 @@ module.exports = {
   changePassword,
   upload,
   getFiles,
-  edit
+  edit,
+  deleteFile
 }
