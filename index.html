@@ -39,6 +39,7 @@
             <input type="submit" name="submit" class="submit-btn" value="Sign up!">
           </fieldset>
         </form>
+        <button type="button" name="Already a User" id="already-user">Already a User</button>
         <p id="signUpFail"></p>
       </div>
       <!-- Sign In-->
@@ -51,6 +52,7 @@
             <input type="password" name="credentials[password]" value="" placeholder="password">
             <input type="submit" name="submit" value="Sign in!">
           </fieldset>
+          <button type="button" name="Not a Userr" id="not-user">Wait, I DO need to Sign-up!</button>
           <p id="signInFail"></p>
         </form>
       </div>
@@ -263,14 +265,15 @@
     </div>
   </div> -->
 
+  <h2 id="my-file-heading" class="hidden">My Files</h2>
+  <div id="myFile-data">
 
-  <div id="myFile-data" class="hidden">
-    <h2>My Files</h2>
   </div>
   <hr>
 
-  <div id="theirFile-data" class="hidden">
-    <h2 >Others People Files</h2>
+  <h2 id="their-file-heading" class="hidden">Others People Files</h2>
+  <div id="theirFile-data">
+
   </div>
   <hr>
   <button id="get-files" class="hidden">Get Files</button>

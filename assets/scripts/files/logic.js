@@ -5,6 +5,8 @@ const app = require('../app.js')
 const loopFiles = function (data) {
   $('#myFile-data').empty()
   $('#theirFile-data').empty()
+  $('#myFile-data').removeClass('hidden')
+  $('#theirFile-data').removeClass('hidden')
   const files = data.files
   for (let i = 0; i < files.length; i++) {
     if (files[i]._user === app.user.id) {
