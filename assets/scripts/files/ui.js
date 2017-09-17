@@ -64,6 +64,9 @@ const signOutSuccess = () => {
   $('#their-file-heading').addClass('hidden')
   $('#get-files').addClass('hidden')
   $('#upload-form').addClass('hidden')
+  $('#already-user').removeClass('hidden')
+  $('#myFile-data').empty()
+  $('#theirFile-data').empty()
 }
 
 const signOutFailure = (error) => {
