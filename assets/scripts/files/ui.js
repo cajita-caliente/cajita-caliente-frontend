@@ -2,6 +2,7 @@
 // OJO Verify that the relative path are ok.
 const app = require('../app.js')
 const logic = require('./logic')
+const api = require('./api')
 
 // Sign Up
 const signUpSuccess = (data) => {
@@ -19,7 +20,7 @@ const signUpSuccess = (data) => {
   signUpFail.html('').css('color', 'red')
 }
 const signUpFailure = (error) => {
-  // console.log(error)
+  console.log(error)
   $('#sign-up-error').removeClass('hidden')
   const signUpFail = $('#signUpFail')
   signUpFail.html('Sign Up failed. Verify your email or password!').css('color', 'red')
@@ -41,6 +42,9 @@ const signInSuccess = (data) => {
   $('#not-user').addClass('hidden')
   const signInFail = $('#signInFail')
   signInFail.html('').css('color', 'red')
+  api.getFiles()
+    .done(getFilesSuccess)
+    .fail(getFilesFailure)
 }
 const signInFailure = (error) => {
   console.log(error)
@@ -84,6 +88,9 @@ const changePasswordFailure = (error) => {
 const uploadSuccess = () => {
   console.log('Uploaded Sucessfully')
   $('#upload-form input').not('.submit-btn').val('')
+  api.getFiles()
+    .done(getFilesSuccess)
+    .fail(getFilesFailure)
 }
 const uploadFailure = (error) => {
   console.error(error)
@@ -97,6 +104,28 @@ const getFilesSuccess = function (data) {
   $('#theirFile-data').removeClass('hidden')
 }
 const getFilesFailure = (error) => {
+  console.error(error)
+}
+
+const editSuccess = function (data) {
+  console.table(data)
+  api.getFiles()
+    .done(getFilesSuccess)
+    .fail(getFilesFailure)
+}
+
+const editFailure = (error) => {
+  console.error(error)
+}
+
+const deleteSuccess = function (data) {
+  console.table(data)
+  api.getFiles()
+    .done(getFilesSuccess)
+    .fail(getFilesFailure)
+}
+
+const deleteFailure = (error) => {
   console.error(error)
 }
 
@@ -128,5 +157,9 @@ module.exports = {
   uploadFailure,
   getFilesFailure,
   oldUser,
-  newUser
+  newUser,
+  editSuccess,
+  editFailure,
+  deleteSuccess,
+  deleteFailure
 }
