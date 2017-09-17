@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    production: 'https://powerful-river-39157.herokuapp.com'
   }
 }
 

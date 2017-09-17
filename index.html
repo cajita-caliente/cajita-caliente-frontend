@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title></title>
+  <title>Cajita Caliente App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags-->
@@ -11,55 +11,281 @@
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-
-
 </head>
 
 <body>
-  <div class="container-fluid">
-    <form id="sign-up">
-      <fieldset>
-        <legend></legend>
-        <input type="text" name="credentials[email]" value="" placeholder="email">
-        <input type="password" name="credentials[password]" value="" placeholder="password">
-        <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-        <input type="submit" name="submit" value="Sign up!">
-      </fieldset>
-    </form>
+  <!-- Flexbox-->
 
-    <form id="sign-in">
-      <fieldset>
-        <legend></legend>
-        <input type="text" name="credentials[email]" value="" placeholder="email">
-        <input type="password" name="credentials[password]" value="" placeholder="password">
-        <input type="submit" name="submit" value="Sign in!">
-      </fieldset>
-    </form>
+  <!-- I. HEADER-->
+  <div class="flex-grid header">
+    <div class="header col">
+      <center>
+        <h1>Cajita Caliente App</h1></center>
+    </div>
+  </div>
+  <hr>
+  <!-- II. USER AUTHENTICATION-->
+  <div class="flex-grid">
+    <!-- Sign Up-->
+    <div class="header col">
+      <div>
+        <form id="sign-up">
+          <h2>Sign Up</h2>
+          <fieldset>
+            <legend></legend>
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+            <input type="submit" name="submit" class="submit-btn" value="Sign up!">
+          </fieldset>
+        </form>
+        <button type="button" name="Already a User" id="already-user">Already a User</button>
+        <p id="signUpFail"></p>
+      </div>
+      <!-- Sign In-->
+      <div>
+        <form id="sign-in" class="hidden">
+          <h2>Sign In</h2>
+          <fieldset>
+            <legend></legend>
+            <input type="text" name="credentials[email]" value="" placeholder="email">
+            <input type="password" name="credentials[password]" value="" placeholder="password">
+            <input type="submit" name="submit" value="Sign in!">
+          </fieldset>
+          <button type="button" name="Not a Userr" id="not-user">Wait, I DO need to Sign-up!</button>
+          <p id="signInFail"></p>
+        </form>
+      </div>
+      <!-- Change password-->
+      <div>
+        <form id="change-password" class="hidden change-password-error">
+            <h2>Change Password</h2>
+          <fieldset>
+            <legend></legend>
+            <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+            <input type="password" name="passwords[new]" value="" placeholder="New Password">
+            <input type="submit" name="submit" class="submit-btn" value="Change Password">
+          </fieldset>
+        </form>
+        <p id="changePasswordFail"></p>
+      </div>
+      <br>
+      <div class="col">
+        <form id="sign-out" class="hidden">
+          <fieldset>
+            <legend></legend>
+            <input type="submit" name="submit" value="Sign out">
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    <form id="sign-out">
+  <!-- III. UPLOAD-->
+  <div>
+    <!-- <form id="application-x-www-form-data" enctype="multipart/form-data" class="upload">
+      <h2>Upload Files</h2>
+      <br>
       <fieldset>
-        <legend></legend>
-        <input type="submit" name="submit" value="Sign out">
+        <legend>Choose an image</legend>
+        <label>
+            Title
+            <input type="text" name="image[title]">
+          </label>
+        <label>
+            Image
+            <input type="file" name="image[file]">
+          </label>
+        <input type="submit" name="submit" value="Upload" id="upload">
       </fieldset>
-    </form>
-
-    <form id="change-password">
+    </form> -->
+    <br>
+    <form id="upload-form" enctype="multipart/form-data" class="upload hidden" >
+      <h2>Upload a File</h2>
       <fieldset>
-        <legend></legend>
-        <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-        <input type="password" name="passwords[new]" value="" placeholder="New Password">
-        <input type="submit" name="submit" value="Change Password">
+        <legend>Choose a file</legend>
+        <label>
+            Title
+            <input type="text" name="file[title]">
+        </label>
+        <label>
+            File
+            <input type="file" name="file[file]">
+          </label>
+          <label>
+              Tags
+              <input type="text" name="file[tags]">
+            </label>
+        <input type="submit" name="submit" class="submit-btn" value="Upload" id="upload hidden">
       </fieldset>
     </form>
   </div>
+
+  <!-- css grid layout one possibility for laying out the wireframes-->
+  <!-- hasn't been fully layed out yet. this was start-->
+
+  <hr>
+  <!-- III. MY FILES-->
+   <!-- <div>
+    <h2>My Files</h2>
+    <div class="flex-grid">
+      <div class="col">
+        <p>File 1</p>
+        <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit" class="hidden">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+          <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <p>File 2</p>
+        <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+          <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <p>File 3</p>
+        <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+          <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+  <hr>
+  <!-- IV. OTHER PEOPLE FILES-->
+   <!-- <div>
+    <h2>Others People Files</h2>
+    <div class="flex-grid">
+      <div class="col">
+        <p>File 1</p>
+        <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+          <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <p>File 2</p>
+        <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+        <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <p>File 3</p>
+       <p>Options</p>
+        <ul>
+          <li>
+            <form id="edit">
+              <input type="submit" name="submit" value="Edit File">
+            </form>
+          </li>
+           <li>
+            <form id="delete">
+              <input type="submit" name="submit" value="Delete File">
+            </form>
+          </li>
+          <li>
+            <form id="download">
+              <input type="submit" name="submit" value="Download File">
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+
+  <h2 id="my-file-heading" class="hidden">My Files</h2>
+  <div id="myFile-data">
+
+  </div>
+  <hr>
+
+  <h2 id="their-file-heading" class="hidden">Others People Files</h2>
+  <div id="theirFile-data">
+
+  </div>
+  <hr>
+  <button id="get-files" class="hidden">Get Files</button>
+
   <!-- css grid layout-->
-  <div class="grid">
-    <div class="title">Title</div>
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
-    <div class="content">Content</div>
-    <div class="footer">footer</div>
-  </div>
+  <!-- <div class="grid">
+    <div class="title">1 Title</div>
+    <div class="sidebar">3 Sidebar</div>
+    <div class="content">4 Content</div>
+    <div class="header">2 Header</div>
+    <div class="footer">5 footer</div>
+  </div> -->
 </body>
 
 </html>
