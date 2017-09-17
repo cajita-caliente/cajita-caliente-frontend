@@ -61,6 +61,7 @@ Back-end Deployed
 https://powerful-river-39157.herokuapp.com
 
 Front-end Deployed
+https://cajita-caliente.github.io/cajita-caliente-frontend/
 
 
 ## [License](LICENSE)
