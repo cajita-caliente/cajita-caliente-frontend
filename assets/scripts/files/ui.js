@@ -60,6 +60,7 @@ const changePasswordSuccess = () => {
   // console.log('Password Successfully Changed.')
   $('#change-password').addClass('hidden')
   $('#change-password-error').addClass('hidden')
+  $('#change-password input').not('.submit-btn').val('')
 }
 const changePasswordFailure = (error) => {
   // console.log(error)
@@ -68,6 +69,7 @@ const changePasswordFailure = (error) => {
 // Upload a file
 const uploadSuccess = () => {
   console.log('Uploaded Sucessfully')
+  $('#upload-form input').not('.submit-btn').val('')
 }
 const uploadFailure = (error) => {
   console.error(error)
