@@ -18,6 +18,8 @@ const signUpSuccess = (data) => {
 const signUpFailure = (error) => {
   // console.log(error)
   $('#sign-up-error').removeClass('hidden')
+  const signUpFail = $('#signUpFail')
+  signUpFail.html('Sign Up failed. Verify your email or password!').css('color', 'red')
 }
 // Sign In
 const signInSuccess = (data) => {
@@ -37,6 +39,8 @@ const signInSuccess = (data) => {
 const signInFailure = (error) => {
   // console.log(error)
   $('#sign-in-error').removeClass('hidden')
+  const signInFail = $('#signInFail')
+  signInFail.html('Sign In failed. Verify your email or password!').css('color', 'red')
 }
 // Sign Out
 const signOutSuccess = () => {
@@ -65,6 +69,9 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = (error) => {
   // console.log(error)
   $('#change-password-error').removeClass('hidden')
+  const changePasswordFail = $('#changePasswordFail')
+  changePasswordFail.html('Change password failed. Verify your email or password!').css('color', 'red')
+
 }
 // Upload a file
 const uploadSuccess = () => {
