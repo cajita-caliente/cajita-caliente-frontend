@@ -66,17 +66,16 @@ const getFiles = function () {
     }
   })
 }
-const edit = function (data) {
+const edit = function (id, data) {
   console.log(data)
+  console.log(id)
   return $.ajax({
     method: 'PATCH',
-    url: app.host + '/files/' + data.file.id,
+    url: app.host + '/files/' + id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data: {
-      'tags': data.tags
-    }
+    data
   })
 }
 

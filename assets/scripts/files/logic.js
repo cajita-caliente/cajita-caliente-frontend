@@ -14,10 +14,10 @@ const loopFiles = function (data) {
         '<h2>' + files[i].title + '</h2>' +
         '<p>' + files[i].tags + '</p>' +
         '<button class="delete-file btn btn-default" data-id="' + files[i].id + '" id="' + files[i].id + '" type="button" class="btn">Delete</button>' +
-        '<form class="edit">' +
+        '<form class="edit" data-id="' + files[i].id + '">' +
         '<legend>Edit Tags</legend>' +
         '<input type="text" name="files[tags]" placeholder="New Tags">' +
-        '<input type="submit" class="edit-file btn btn-default" id="' + files[i].id + '" type="button" class="btn"></button>' +
+        '<input type="submit" class="edit-file btn btn-default" data-id="' + files[i].id + '" type="button" class="btn"></button>' +
         '</form>' +
         '<a class="download-file btn btn-default" href="' + files[i].url + '">Download</a>' +
         '</div>'
