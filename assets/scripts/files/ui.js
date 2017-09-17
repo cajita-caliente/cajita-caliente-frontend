@@ -9,11 +9,11 @@ const signUpSuccess = (data) => {
   // console.log(data)
   // console.log('Sign up successful')
   $('#sign-up').addClass('hidden')
-  // $('#sign-up').val('')
   $('#sign-in').removeClass('hidden')
   $('#sign-up-error').addClass('hidden')
   $('#myFile-data').addClass('hidden')
   $('#theirFile-data').addClass('hidden')
+  $('#sign-up input').not('.submit-btn').val('')
 }
 const signUpFailure = (error) => {
   // console.log(error)
@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
   $('#get-files').removeClass('hidden')
   $('#myFile-data').removeClass('hidden')
   $('#theirFile-data').removeClass('hidden')
+  $('#sign-in input').not('.submit-btn').val('')
 }
 const signInFailure = (error) => {
   // console.log(error)
@@ -44,6 +45,11 @@ const signOutSuccess = () => {
   // console.log('Sign out successful')
   $('#sign-out').addClass('hidden')
   $('#sign-up').removeClass('hidden')
+  $('#change-password').addClass('hidden')
+  $('#myFile-data').addClass('hidden')
+  $('#theirFile-data').addClass('hidden')
+  $('#get-files').addClass('hidden')
+  $('#upload-form').addClass('hidden')
 }
 
 const signOutFailure = (error) => {
