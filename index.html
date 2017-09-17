@@ -29,40 +29,45 @@
     <!-- Sign Up-->
     <div class="header col">
       <div>
-        <h2>Sign Up</h2>
-        <form id="sign-up" class=""
+        <form id="sign-up">
+          <h2>Sign Up</h2>
           <fieldset>
             <legend></legend>
             <input type="text" name="credentials[email]" value="" placeholder="email">
             <input type="password" name="credentials[password]" value="" placeholder="password">
             <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-            <input type="submit" name="submit" value="Sign up!">
+            <input type="submit" name="submit" class="submit-btn" value="Sign up!">
           </fieldset>
         </form>
+        <button type="button" name="Already a User" id="already-user">Already a User</button>
+        <p id="signUpFail"></p>
       </div>
       <!-- Sign In-->
       <div>
-        <h2 class="hidden">Sign In</h2>
         <form id="sign-in" class="hidden">
+          <h2>Sign In</h2>
           <fieldset>
             <legend></legend>
             <input type="text" name="credentials[email]" value="" placeholder="email">
             <input type="password" name="credentials[password]" value="" placeholder="password">
             <input type="submit" name="submit" value="Sign in!">
           </fieldset>
+          <button type="button" name="Not a Userr" id="not-user">Wait, I DO need to Sign-up!</button>
+          <p id="signInFail"></p>
         </form>
       </div>
       <!-- Change password-->
       <div>
-        <h2 class="hidden">Change Password</h2>
-        <form id="change-password" class="hidden">
+        <form id="change-password" class="hidden change-password-error">
+            <h2>Change Password</h2>
           <fieldset>
             <legend></legend>
             <input type="password" name="passwords[old]" value="" placeholder="Old Password">
             <input type="password" name="passwords[new]" value="" placeholder="New Password">
-            <input type="submit" name="submit" value="Change Password">
+            <input type="submit" name="submit" class="submit-btn" value="Change Password">
           </fieldset>
         </form>
+        <p id="changePasswordFail"></p>
       </div>
       <br>
       <div class="col">
@@ -96,6 +101,7 @@
     </form> -->
     <br>
     <form id="upload-form" enctype="multipart/form-data" class="upload hidden" >
+      <h2>Upload a File</h2>
       <fieldset>
         <legend>Choose a file</legend>
         <label>
@@ -110,7 +116,7 @@
               Tags
               <input type="text" name="file[tags]">
             </label>
-        <input type="submit" name="submit" value="Upload" id="upload hidden">
+        <input type="submit" name="submit" class="submit-btn" value="Upload" id="upload hidden">
       </fieldset>
     </form>
   </div>
@@ -120,7 +126,7 @@
 
   <hr>
   <!-- III. MY FILES-->
-  <!-- <div>
+   <!-- <div>
     <h2>My Files</h2>
     <div class="flex-grid">
       <div class="col">
@@ -187,22 +193,22 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
   <hr>
   <!-- IV. OTHER PEOPLE FILES-->
-  <!-- <div>
+   <!-- <div>
     <h2>Others People Files</h2>
     <div class="flex-grid">
       <div class="col">
         <p>File 1</p>
-        <!-- <p>Options</p>
+        <p>Options</p>
         <ul>
-          <!-- <li>
+          <li>
             <form id="edit">
               <input type="submit" name="submit" value="Edit File">
             </form>
-          </li> -->
-          <!-- <li>
+          </li>
+          <li>
             <form id="delete">
               <input type="submit" name="submit" value="Delete File">
             </form>
@@ -216,19 +222,19 @@
       </div>
       <div class="col">
         <p>File 2</p>
-        <!-- <p>Options</p>
+        <p>Options</p>
         <ul>
-          <!-- <li>
+          <li>
             <form id="edit">
               <input type="submit" name="submit" value="Edit File">
             </form>
-          </li> -->
-          <!-- <li>
+          </li>
+        <li>
             <form id="delete">
               <input type="submit" name="submit" value="Delete File">
             </form>
-          <!-- </li> -->
-          <!-- <li>
+          </li>
+          <li>
             <form id="download">
               <input type="submit" name="submit" value="Download File">
             </form>
@@ -237,14 +243,14 @@
       </div>
       <div class="col">
         <p>File 3</p>
-        <!-- <p>Options</p>
-        <ul> -->
-          <!-- <li>
+       <p>Options</p>
+        <ul>
+          <li>
             <form id="edit">
               <input type="submit" name="submit" value="Edit File">
             </form>
-          </li> -->
-          <!-- <li>
+          </li>
+           <li>
             <form id="delete">
               <input type="submit" name="submit" value="Delete File">
             </form>
@@ -259,12 +265,15 @@
     </div>
   </div> -->
 
-  <h2 class="hidden">My Files</h2>
+  <h2 id="my-file-heading" class="hidden">My Files</h2>
   <div id="myFile-data">
+
   </div>
   <hr>
-  <h2 class="hidden">Others People Files</h2>
+
+  <h2 id="their-file-heading" class="hidden">Others People Files</h2>
   <div id="theirFile-data">
+
   </div>
   <hr>
   <button id="get-files" class="hidden">Get Files</button>

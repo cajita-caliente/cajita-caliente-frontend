@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./files/events')
+const ui = require('./files/ui')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -31,6 +32,8 @@ const addHandlers = () => {
   $(document).on('click', '.delete-file', events.onDelete)
 
   $(document).on('submit', '.edit', events.onEdit)
+  $('#already-user').on('click', ui.oldUser)
+  $('#not-user').on('click', ui.newUser)
 }
 
 module.exports = {
