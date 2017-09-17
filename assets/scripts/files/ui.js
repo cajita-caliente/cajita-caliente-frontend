@@ -75,6 +75,14 @@ const deleteFailure = (error) => {
   console.error(error)
 }
 
+const downloadSuccess = function () {
+  console.log('downloading!')
+}
+
+const downloadFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -91,5 +99,7 @@ module.exports = {
   editSuccess,
   editFailure,
   deleteSuccess,
-  deleteFailure
+  deleteFailure,
+  downloadSuccess,
+  downloadFailure
 }

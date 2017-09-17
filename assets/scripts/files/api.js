@@ -89,6 +89,16 @@ const deleteFile = function (id) {
   })
 }
 
+const downloadFile = function (id) {
+  return $.ajax({
+    url: app.host + '/files/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -97,5 +107,6 @@ module.exports = {
   upload,
   getFiles,
   edit,
-  deleteFile
+  deleteFile,
+  downloadFile
 }

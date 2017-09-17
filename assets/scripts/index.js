@@ -29,7 +29,7 @@ const addHandlers = () => {
   // $('.edit-file').on('submit', events.onEdit)
   // $('.delete-file').on('click', events.onDelete)
   $(document).on('click', '.delete-file', events.onDelete)
-
+  $(document).on('click', '.download-file', events.onDownload)
   $(document).on('submit', '.edit', events.onEdit)
 }
 

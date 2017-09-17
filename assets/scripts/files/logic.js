@@ -19,7 +19,7 @@ const loopFiles = function (data) {
         '<input type="text" name="files[tags]" placeholder="New Tags">' +
         '<input type="submit" class="edit-file btn btn-default" data-id="' + files[i].id + '" type="button" class="btn"></button>' +
         '</form>' +
-        '<a class="download-file btn btn-default" href="' + files[i].url + '">Download</a>' +
+        '<button class="download-file btn btn-default" data-id="' + files[i].id + '" id="' + files[i].id + '" type="button" class="btn">Download</button>' +
         '</div>'
       )
     } else {

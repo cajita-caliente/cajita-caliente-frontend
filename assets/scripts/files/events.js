@@ -76,6 +76,14 @@ const onDelete = function (event) {
     .fail(ui.deleteFailure)
 }
 
+// Download
+const onDownload = function (event) {
+  event.preventDefault()
+  api.downloadFile(event.target.dataset.id)
+    .done(ui.downloadSuccess)
+    .fail(ui.downloadFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -84,5 +92,6 @@ module.exports = {
   onUpload,
   onGetFiles,
   onEdit,
-  onDelete
+  onDelete,
+  onDownload
 }
