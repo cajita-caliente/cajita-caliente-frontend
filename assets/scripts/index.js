@@ -30,7 +30,7 @@ const addHandlers = () => {
   // $('.delete-file').on('click', events.onDelete)
   $(document).on('click', '.delete-file', events.onDelete)
 
-  $(document).on('submit', '.edit-file', events.onEdit)
+  $(document).on('submit', '.edit', events.onEdit)
 }
 
 module.exports = {

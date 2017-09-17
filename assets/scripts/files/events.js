@@ -61,8 +61,9 @@ const onGetFiles = function (event) {
 // Edit (Update)
 const onEdit = function (event) {
   event.preventDefault()
+  const id = (event.target.dataset.id)
   const data = getFormFields(event.target)
-  api.edit(data)
+  api.edit(id, data)
     .done(ui.editSuccess)
     .fail(ui.editFailure)
 }
