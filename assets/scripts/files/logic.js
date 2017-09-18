@@ -12,7 +12,7 @@ const loopFiles = function (data) {
     if (files[i]._user === app.user.id) {
       $('#myFile-data').append(
         '<div> ' +
-        '<img src="https://raw.githubusercontent.com/cajita-caliente/cajita-caliente-frontend/master/images/logo.png">' +
+        '<img src="https://i.imgur.com/mlIU8Y7.png">' +
         '<h2>' + files[i].title + '</h2>' +
         '<p>' + files[i].tags + '</p>' +
         '<button class="delete-file btn btn-default" data-id="' + files[i].id + '" id="' + files[i].id + '" type="button" class="btn">Delete</button>' +
