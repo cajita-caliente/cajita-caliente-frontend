@@ -13,8 +13,8 @@ const loopFiles = function (data) {
       $('#myFile-data').append(
         '<div> ' +
         '<img src="https://i.imgur.com/mlIU8Y7.png">' +
-        '<h2>' + files[i].title + '</h2>' +
-        '<p>' + files[i].tags + '</p>' +
+        '<h2>' + 'Title:' + files[i].title + '</h2>' +
+        '<p>' + 'Tags:' + files[i].tags + '</p>' +
         '<button class="delete-file btn btn-default" data-id="' + files[i].id + '" id="' + files[i].id + '" type="button" class="btn">Delete</button>' +
         '<form class="edit" data-id="' + files[i].id + '">' +
         '<legend>Edit Tags</legend>' +
@@ -27,9 +27,9 @@ const loopFiles = function (data) {
     } else {
       $('#theirFile-data').append(
         '<div> ' +
-        '<img src="../../../images/logo.png">' +
-        '<h2>' + files[i].title + '</h2>' +
-        '<p>' + files[i].tags + '</p>' +
+        '<img src="https://i.imgur.com/mlIU8Y7.png">' +
+        '<h2>' + 'Title:' + files[i].title + '</h2>' +
+        '<p>' + 'Tags:' + files[i].tags + '</p>' +
         '<a class="download-file btn btn-default" href="' + files[i].url + '">Download</a>' +
         '</div>'
       )
